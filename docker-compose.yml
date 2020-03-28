@@ -1,0 +1,14 @@
+version: '3'
+  
+services:
+ acbridge:
+  image: acbridge
+  command: /usr/local/bin/homebridge -U /var/lib/homebridge
+  volumes:
+   - /var/lib/docker-compose/acbridge/homebridge:/var/lib/homebridge
+   - /var/lib/docker-compose/acbridge/node_modules:/usr/local/lib/node_modules
+  container_name: acbridge
+  restart: always
+  network_mode: host
+  ports:
+   - "30212:30212"
