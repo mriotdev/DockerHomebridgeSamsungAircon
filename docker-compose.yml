@@ -2,12 +2,11 @@ version: '3'
   
 services:
  acbridge:
-  image: acbridge
+  image: samsung_ac
   command: /usr/local/bin/homebridge -U /var/lib/homebridge
   volumes:
-   - /var/lib/docker-compose/acbridge/homebridge:/var/lib/homebridge
-   - /var/lib/docker-compose/acbridge/node_modules:/usr/local/lib/node_modules
-  container_name: acbridge
+   - ./samsung_ac/homebridge:/var/lib/homebridge
+  container_name: samsung_ac
   restart: always
   network_mode: host
   ports:
